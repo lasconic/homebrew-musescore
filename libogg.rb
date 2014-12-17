@@ -20,7 +20,7 @@ class Libogg < Formula
 
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+                          "--prefix=#{prefix}",
                           "MACOSX_DEPLOYMENT_TARGET=10.8"
     system "make"
     ENV.deparallelize

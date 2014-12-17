@@ -15,7 +15,7 @@ class Portaudio < Formula
     system "./configure", "--prefix=#{prefix}",
                           "--disable-debug",
                           "--disable-dependency-tracking",
-                          "--enable-mac-universal=#{build.universal? ? 'yes' : 'no'}"
+                          "--enable-mac-universal=#{build.universal? ? 'yes' : 'no'}",
                           "MACOSX_DEPLOYMENT_TARGET=10.8"
     system "make", "install"
 
