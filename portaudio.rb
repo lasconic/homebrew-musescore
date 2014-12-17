@@ -12,11 +12,12 @@ class Portaudio < Formula
 
   def install
     ENV.universal_binary if build.universal?
+    ENV.CFLAGS="-O2 -g -Wall -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.8"
+    ENV.LDFLAGS="-arch x86_64 -isysroot /Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.8"
     system "./configure", "--prefix=#{prefix}",
                           "--disable-debug",
                           "--disable-dependency-tracking",
                           "--enable-mac-universal=#{build.universal? ? 'yes' : 'no'}",
-                          "MACOSX_DEPLOYMENT_TARGET=10.8"
     system "make", "install"
 
     # Need 'pa_mac_core.h' to compile PyAudio
