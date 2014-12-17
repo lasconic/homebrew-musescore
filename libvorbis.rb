@@ -16,7 +16,7 @@ class Libvorbis < Formula
   option :universal
 
   depends_on 'pkg-config' => :build
-  depends_on 'lasconic/homebrew-musescore/libogg'
+  depends_on 'lasconic/musescore/libogg'
 
   def install
     ENV.universal_binary if build.universal?

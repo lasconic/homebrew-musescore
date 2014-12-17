@@ -15,7 +15,7 @@ class Flac < Formula
   option :universal
 
   depends_on "pkg-config" => :build
-  depends_on "libogg" => :optional
+  depends_on "lasconic/musescore/libogg" => :optional
 
   fails_with :llvm do
     build 2326

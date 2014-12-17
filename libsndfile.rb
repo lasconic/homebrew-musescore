@@ -10,9 +10,9 @@ class Libsndfile < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "lasconic/homebrew-musescore/flac"
-  depends_on "lasconic/homebrew-musescore/libogg"
-  depends_on "lasconic/homebrew-musescore/libvorbis"
+  depends_on "lasconic/musescore/flac"
+  depends_on "lasconic/musescore/libogg"
+  depends_on "lasconic/musescore/libvorbis"
 
   option :universal
 
