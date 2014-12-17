@@ -20,6 +20,8 @@ class Libvorbis < Formula
 
   def install
     ENV.universal_binary if build.universal?
+    ENV.append "CFLAGS", "-O2 -g -Wall -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.8"
+    ENV.append "LDFLAGS", "-arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.8"
 
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",

@@ -44,7 +44,7 @@ class Flac < Formula
     args << "--disable-asm-optimizations" if build.universal? || Hardware.is_32_bit?
     args << "--without-ogg" if build.without? "libogg"
     args << "MACOSX_DEPLOYMENT_TARGET=10.8"
-    #args << "SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/"
+    args << "SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
 
     system "./autogen.sh" if build.head?
     system "./configure", *args
