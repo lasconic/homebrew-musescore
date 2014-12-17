@@ -17,7 +17,7 @@ class Portaudio < Formula
     system "./configure", "--prefix=#{prefix}",
                           "--disable-debug",
                           "--disable-dependency-tracking",
-                          "--enable-mac-universal=#{build.universal? ? 'yes' : 'no'}",
+                          "--enable-mac-universal=#{build.universal? ? 'yes' : 'no'}"
     system "make", "install"
 
     # Need 'pa_mac_core.h' to compile PyAudio
