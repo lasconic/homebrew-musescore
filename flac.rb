@@ -32,6 +32,9 @@ class Flac < Formula
 
     ENV.append "CFLAGS", "-std=gnu89"
 
+    ENV.append "CFLAGS", "-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.8"
+    ENV.append "LDFLAGS", "-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.8"
+
     args = %W[
       --disable-dependency-tracking
       --disable-debug
@@ -43,8 +46,6 @@ class Flac < Formula
 
     args << "--disable-asm-optimizations" if build.universal? || Hardware.is_32_bit?
     args << "--without-ogg" if build.without? "libogg"
-    args << "MACOSX_DEPLOYMENT_TARGET=10.8"
-    args << "SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk"
 
     system "./autogen.sh" if build.head?
     system "./configure", *args
